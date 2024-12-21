@@ -1,16 +1,26 @@
-function makeTransaction(quantity, pricePerDroid, customerCredits) {
-  let totalPrice = quantity * pricePerDroid;
-  if (totalPrice > customerCredits) {
-    return `Insufficient funds!`;
-  } else {
-    totalPrice <= customerCredits;
+// const planets = ['Earth', 'Mars', 'Venus']; // масив рядків
+// const numbers = [1, 2, 3, 4, 5]; // масив чисел
+// console.log(planets);
+// console.log(numbers);
+
+// const planets = ['Earth', 'Mars', 'Venus'];
+// console.log(planets[0]); // 'Earth'
+// console.log(planets[1]); // 'Mars'
+// console.log(planets[2]); // 'Venus'
+
+// const name = 'Mango';
+// const letters = name.split('');
+// console.log(letters);
+
+// const message = 'JavaScript essentials';
+// const words = message.split(' ');
+// console.log(words);
+
+function fillArray(min, max) {
+  let arr = [];
+  for (let i = min; i <= max; i += 2) {
+    return arr.push(i);
   }
-  return `You ordered ${quantity} droids worth ${totalPrice} credits!`;
 }
 
-console.log(makeTransaction(5, 3000, 23000)); // "You ordered 5 droids worth 15000 credits!"
-console.log(makeTransaction(3, 1000, 15000)); // "You ordered 3 droids worth 3000 credits!"
-console.log(makeTransaction(10, 5000, 8000)); // "Insufficient funds!"
-console.log(makeTransaction(8, 2000, 10000)); // "Insufficient funds!"
-console.log(makeTransaction(10, 500, 5000)); // "You ordered 10 droids worth 5000 credits!"
-// console.log(task1);
+console.log(fillArray(2, 10));
