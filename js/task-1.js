@@ -82,11 +82,54 @@
 // bookShelf.getAvarageRating(); // 7
 // ---------------------------------------------
 
-const first = { propA: 5, propB: 10, propC: 50 };
-const second = { propC: 15, propD: 20 };
+// const first = { propA: 5, propB: 10, propC: 50 };
+// const second = { propC: 15, propD: 20 };
 
-const third = { ...first, ...second };
-console.log(third); // { propA: 5, propB: 10, propC: 15, propD: 20 }
+// const third = { ...first, ...second };
+// console.log(third); // { propA: 5, propB: 10, propC: 15, propD: 20 }
 
-const fourth = { ...second, ...first };
-console.log(fourth); // { propA: 5, propB: 10, propC: 50, propD: 20 }
+// const fourth = { ...second, ...first };
+// console.log(fourth); // { propA: 5, propB: 10, propC: 50, propD: 20 }
+
+//  !===============================================================
+
+// =========
+// const students = [
+//   { name: 'Mango', courses: ['mathematics', 'physics'] },
+//   { name: 'Poly', courses: ['science', 'mathematics'] },
+//   { name: 'Kiwi', courses: ['physics', 'biology'] },
+// ];
+
+// const mappedCourses = students.map(student => student.courses);
+// console.log(mappedCourses); // [["mathematics", "physics"], ["science", "mathematics"], ["physics", "biology"]]
+
+// const flattenedCourses = students.flatMap(student => student.courses);
+// console.log(flattenedCourses); // ["mathematics", "physics", "science", "mathematics", "physics", "biology"];
+// ==================================================================================
+
+// const values = [51, -3, 27, 21, -68, 42, -37];
+
+// const positiveValues = values.filter(value => value >= 0);
+// console.log(positiveValues); // [51, 27, 21, 42]
+// // до positiveValues потрапили всі елементи масиву values, які задовольнили умову колбека, тобто були >= 0
+
+// const negativeValues = values.filter(value => value < 0);
+// console.log(negativeValues); // [-3, -68, -37]
+// // до negativeValues потрапили всі елементи масиву values, які задовольнили умову колбека, тобто були < 0
+
+// const bigValues = values.filter(value => value > 1000);
+// console.log(bigValues); // []
+// // до negatibigValues eValues потрапили всі елементи масиву values, які задовольнили умову колбека, тобто були > 1000
+
+// console.log(values); // [51, -3, 27, 21, -68, 42, -37]
+// // Оригінальний масив values не змінився
+// ====================================================
+
+const products = [
+  { name: 'apple', quantity: 2 },
+  { name: 'orange', quantity: 5 },
+  { name: 'plum', quantity: 0 },
+];
+
+const hasEveryProduct = products.every(product => product.quantity > 0);
+console.log(hasEveryProduct); // false
