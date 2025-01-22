@@ -125,11 +125,131 @@
 // // Оригінальний масив values не змінився
 // ====================================================
 
-const products = [
-  { name: 'apple', quantity: 2 },
-  { name: 'orange', quantity: 5 },
-  { name: 'plum', quantity: 0 },
-];
+// const products = [
+//   { name: 'apple', quantity: 2 },
+//   { name: 'orange', quantity: 5 },
+//   { name: 'plum', quantity: 0 },
+// ];
 
-const hasEveryProduct = products.every(product => product.quantity > 0);
-console.log(hasEveryProduct); // false
+// const hasEveryProduct = products.every(product => product.quantity > 0);
+// console.log(hasEveryProduct); // false
+
+// МОДУЛЬ 6
+
+// const book = {
+//   updateTitle(newTitle) {
+//     console.log(this);
+//   },
+// };
+
+// const update = book.updateTitle;
+
+// update('Lord Of The Rings');
+// ================================
+'use strict';
+
+// const customer = {
+//   firstName: 'Jacob',
+//   lastName: 'Mercer',
+//   getFullName() {
+//     return `${this.firstName} ${this.lastName}`;
+//   },
+// };
+
+// function makeMessage(callback) {
+//   // callback() — це виклик методу getFullName в глобальному контексті
+//   const username = callback();
+//   console.log(`Processing an application from ${username}`);
+// }
+
+// makeMessage(customer.getFullName.bind(customer)); // TypeError: Cannot read properties of undefined (reading 'firstName')
+
+// const library = {
+//   books: 1923,
+//   logBookCount() {
+//     console.log(this.books);
+//   },
+// };
+
+// const showBooks = library.logBookCount.bind({ books: 724 });
+
+// showBooks();
+// ---------------------------
+// 'use strict';
+
+// const showThis = () => {
+//   console.log('this in showThis: ', this);
+// };
+
+// showThis(); // this in showThis: window
+// ==========================================
+// const customer = {
+//   username: 'Jacob',
+// };
+
+// const animal = {
+//   legs: 4,
+// };
+
+// const dog = Object.create(animal);
+// dog.name = 'Mango';
+
+// console.log(dog); // { name: "Mango", [[Prototype]]: animal }
+
+// console.log(animal.isPrototypeOf(dog)); // true
+// console.log(dog.isPrototypeOf(animal)); // false
+// console.log(customer.isPrototypeOf(dog)); // false
+// ========================================================
+// const objC = { c: 'objC prop' };
+
+// const objB = Object.create(objC);
+// objB.b = 'objB prop';
+
+// const objA = Object.create(objB);
+// objA.a = 'objA prop';
+
+// console.log(objA); // { a: "objA prop", [[Prototype]]: objB }
+// console.log(objB); // { b: "objB prop", [[Prototype]]: objC }
+// console.log(objC); // { c: "objC prop", [[Prototype]]: Object }
+// ===================================================================
+
+// class User {
+//   constructor(params) {
+//     this.name = params.name;
+//     this.email = params.email;
+//   }
+
+//   getEmail() {
+//     return this.email;
+//   }
+
+//   changeEmail(newEmail) {
+//     this.email = newEmail;
+//   }
+// }
+
+// const mango = new User({
+//   name: 'Mango',
+//   email: 'mango@mail.com',
+// });
+
+// console.log(mango.getEmail()); // “mango@mail.com”
+//
+// =======================================================
+
+class User {
+  constructor(params) {
+    this.name = params.name;
+    this.email = params.email;
+  }
+
+  getEmail() {
+    return this.email;
+  }
+
+  changeEmail(newEmail) {
+    this.email = newEmail;
+  }
+}
+
+console.log(User.prototype); // {constructor: ƒ, getEmail: ƒ, changeEmail: ƒ}
